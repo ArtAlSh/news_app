@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bw9ogqhx9x5d=egmo7my0)+)^z_-i-+qxy*+@+7x!8z2cu&31k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get('DEBUG', default=True))
+DEBUG = bool(os.environ['DEBUG'])
 
 ALLOWED_HOSTS = ['sheltered-wave-85083.herokuapp.com', '127.0.0.1', 'localhost']
 
@@ -79,10 +79,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default": os.environ["DATABASE_URL"],
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 
