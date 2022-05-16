@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bw9ogqhx9x5d=egmo7my0)+)^z_-i-+qxy*+@+7x!8z2cu&31k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ['DEBUG'])
+DEBUG = False
+    # bool(os.environ['DEBUG'])
 
 ALLOWED_HOSTS = ['sheltered-wave-85083.herokuapp.com', '127.0.0.1', 'localhost']
 
