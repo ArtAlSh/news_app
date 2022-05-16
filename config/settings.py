@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,11 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bw9ogqhx9x5d=egmo7my0)+)^z_-i-+qxy*+@+7x!8z2cu&31k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-    # bool(os.environ['DEBUG'])
+DEBUG = True
 
 ALLOWED_HOSTS = ['sheltered-wave-85083.herokuapp.com', '127.0.0.1', 'localhost']
-
 
 # Application definition
 
@@ -81,9 +78,17 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'd6afqt23aa0t3n',
+            'USER': 'uxetmgbfhyxixv',
+            'PASSWORD': '6979ae4d63381fb31ff9bb1938bb680420b0980671e66580567ca09951ebff6c',
+            'HOST': 'ec2-54-86-224-85.compute-1.amazonaws.com',
+            'PORT': '5432',
+        }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 # Password validation
